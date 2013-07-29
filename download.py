@@ -31,10 +31,14 @@ def get_images_from_page(url):
         try:
             href = link['href']
             if '-1680x1050' in href:
-                print 'Downloading %s' % href
-                f = fetchurl(href)
-                with open('fox_backgrounds%s' % href[href.rfind('/'):], "wb") as local_file:
-                    local_file.write(f)
+                fname = 'fox_backgrounds%s' % href[href.rfind('/'):]
+                if not os.path.isfile(fname):
+                  print 'Downloading %s' % href
+                  f = fetchurl(href)
+                  with open(fname, "wb") as local_file:
+                      local_file.write(f)
+                else:
+                  print 'Skipping %s' % href
         except KeyError:
             pass
 
