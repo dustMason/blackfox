@@ -4,6 +4,7 @@
 import urllib
 import urllib2
 import os
+import glob
 
 from BeautifulSoup import BeautifulSoup as bs
 
@@ -32,14 +33,14 @@ def get_images_from_page(url):
             href = link['href']
             if '-1680x1050' in href:
                 fname = 'fox_backgrounds%s' % href[href.rfind('/'):]
-                if not os.path.isfile(fname):
+                if not os.path.isfile(fname) and not os.path.isfile(fname + ".skip"):
                   print 'Downloading %s' % href
                   f = fetchurl(href)
                   with open(fname, "wb") as local_file:
                       local_file.write(f)
                 else:
                   print 'Skipping %s' % href
-        except KeyError:
+        except (KeyError, urllib2.HTTPError):
             pass
 
 
