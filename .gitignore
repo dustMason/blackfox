@@ -3,3 +3,5 @@
 fox_backgrounds/*.jpg
 fox_backgrounds/*.png
 fox_backgrounds/*.jpeg
+fox_backgrounds/*.gif
+node_modules

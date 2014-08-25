@@ -1,0 +1,24 @@
+{
+  "name": "blackfox",
+  "version": "0.0.0",
+  "description": "The Fox is Black Wallpaper Downloader Project ================================",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dustMason/blackfox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dustMason/blackfox/issues"
+  },
+  "homepage": "https://github.com/dustMason/blackfox",
+  "dependencies": {
+    "async": "^0.9.0",
+    "cheerio": "^0.17.0",
+    "request": "^2.40.0"
+  }
+}
